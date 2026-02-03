@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Hikmet Deniz | Ses & Işık Sistemleri</title>
+  <meta name="description" content="Profesyonel ses ve ışık sistemleri. Cami, okul, kafe, işyeri ve düğün salonları için kiralama, kurulum ve teknik servis." />
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background: #0e0e0e;
+      color: #f2f2f2;
+    }
+    a { color: inherit; text-decoration: none; }
+    .container { max-width: 1100px; margin: auto; padding: 40px 20px; }
+
+    header {
+      text-align: center;
+      padding: 120px 20px 90px;
+      background:
+        radial-gradient(900px 300px at 50% 10%, rgba(255,255,255,0.10), rgba(0,0,0,0) 60%),
+        linear-gradient(180deg, #0e0e0e 0%, #141414 100%);
+      position: relative;
+      overflow: hidden;
+    }
+    header::after{
+      content:"";
+      position:absolute;
+      inset:-2px;
+      background:
+        repeating-linear-gradient(90deg, rgba(255,255,255,0.04) 0 1px, rgba(0,0,0,0) 1px 10px),
+        repeating-linear-gradient(0deg, rgba(255,255,255,0.03) 0 1px, rgba(0,0,0,0) 1px 12px);
+      opacity:0.18;
+      pointer-events:none;
+      mix-blend-mode: overlay;
+    }
+    header .hero-badge{
+      display:inline-flex;
+      gap:10px;
+      align-items:center;
+      justify-content:center;
+      padding:10px 16px;
+      border:1px solid rgba(255,255,255,0.18);
+      border-radius:999px;
+      background: rgba(0,0,0,0.25);
+      margin-bottom:18px;
+      position:relative;
+      z-index:1;
+      font-size: 13px;
+      letter-spacing: .5px;
+      text-transform: uppercase;
+      opacity:.95;
+    }
+    header h1 {
+      font-size: 42px;
+      letter-spacing: 1px;
+      margin-bottom: 10px;
+    }
+    header p {
+      font-size: 18px;
+      opacity: 0.85;
+      margin-bottom: 30px;
+    }
+    .cta {
+      display: inline-block;
+      padding: 14px 28px;
+      border: 1px solid rgba(255,255,255,0.7);
+      border-radius: 10px;
+      font-weight: 700;
+      background: rgba(0,0,0,0.25);
+      backdrop-filter: blur(6px);
+      transition: transform .15s ease, border-color .15s ease;
+      position: relative;
+      z-index: 1;
+    }
+    .cta:hover{ transform: translateY(-1px); border-color: #fff; }
+
+    .subcta{
+      display:inline-block;
+      margin-left:10px;
+      padding: 14px 18px;
+      border-radius: 10px;
+      border: 1px solid rgba(255,255,255,0.18);
+      opacity: .92;
+      position: relative;
+      z-index: 1;
+    }
+
+    section h2 {
+      font-size: 28px;
+      margin-bottom: 20px;
+      border-left: 4px solid #f2f2f2;
+      padding-left: 12px;
+    }
+
+    .services, .areas, .why {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 20px;
+    }
+
+    .services, .areas {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 20px;
+    }
+    .box {
+      background: #151515;
+      padding: 20px;
+      border-radius: 14px;
+      border: 1px solid #222;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+    }
+
+    .box strong{ display:block; font-size: 15px; margin-bottom: 6px; }
+    .box span{ display:block; opacity:.82; font-size: 14px; line-height: 1.35; }
+
+    .divider{
+      height:1px;
+      background: linear-gradient(90deg, rgba(255,255,255,0), rgba(255,255,255,0.14), rgba(255,255,255,0));
+      margin: 34px 0;
+    }
+
+    /* WhatsApp Floating Button */
+    .wa-fab{
+      position: fixed;
+      right: 18px;
+      bottom: 18px;
+      width: 54px;
+      height: 54px;
+      border-radius: 999px;
+      display: grid;
+      place-items: center;
+      background: #25D366;
+      color: #0b0b0b;
+      box-shadow: 0 18px 40px rgba(0,0,0,0.35);
+      z-index: 99;
+      border: 1px solid rgba(255,255,255,0.25);
+    }
+    .wa-fab svg{ width: 26px; height: 26px; }
+
+    footer {
+      text-align: center;
+      padding: 40px 20px;
+      background: #0a0a0a;
+      font-size: 14px;
+      opacity: 0.8;
+    }
+
+    .contact {
+      text-align: center;
+      margin-top: 40px;
+    }
+    .contact a {
+      display: block;
+      margin: 10px 0;
+      font-size: 18px;
+    }
+
+    @media (max-width: 600px) {
+      header h1 { font-size: 32px; }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="hero-badge">Kurulum • Kiralama • Teknik Servis</div>
+  <h1>HD Ses & Işık Sistemleri</h1>
+  <p>Profesyonel ses ve ışık çözümleri · Kurulum · Kiralama · Teknik Servis</p>
+  <a class="cta" href="tel:05321736053">Hemen Ara</a>
+  <a class="subcta" href="https://wa.me/905321736053?text=Merhaba%20HD%20Ses%20%26%20I%C5%9F%C4%B1k%20Sistemleri%20i%C3%A7in%20bilgi%20almak%20istiyorum." target="_blank" rel="noopener">WhatsApp</a>
+</header>
+
+<section class="container">
+  <h2>Neden HD?</h2>
+  <div class="services">
+    <div class="box">Net ve dengeli ses kurulumu</div>
+    <div class="box">Mekâna özel profesyonel çözümler</div>
+    <div class="box">Temiz işçilik ve düzenli kurulum</div>
+    <div class="box">Satış sonrası teknik destek</div>
+  </div>
+</section>
+
+<section class="container">
+  <h2>Hizmetler</h2>
+  <div class="services">
+    <div class="box">Profesyonel Ses Sistemi Kiralama</div>
+    <div class="box">Ses & Işık Sistemleri</div>
+    <div class="box">Cami ve Toplu Alan Seslendirme</div>
+    <div class="box">Anons & Mikrofon Sistemleri</div>
+    <div class="box">Mekâna Özel Seslendirme</div>
+    <div class="box">Kurulum & Teknik Servis</div>
+  </div>
+</section>
+
+<section class="container">
+  <h2>Neden HD?</h2>
+  <div class="why">
+    <div class="box"><strong>Net ve Dengeli Ses</strong><span>Mekâna göre doğru hoparlör yerleşimi ve temiz ayar.</span></div>
+    <div class="box"><strong>Şık ve Düzenli Kurulum</strong><span>Kablo, montaj, görünüm—temiz işçilik.</span></div>
+    <div class="box"><strong>Mekâna Özel Çözüm</strong><span>Keşif mantığıyla, ihtiyaca göre sistem.</span></div>
+    <div class="box"><strong>Satış Sonrası Destek</strong><span>Arıza, bakım, ayar—ulaşılabilir servis.</span></div>
+  </div>
+  <div class="divider"></div>
+</section>
+
+<section class="container">
+  <h2>Hizmet Verilen Alanlar</h2>
+  <div class="areas">
+    <div class="box">Cami</div>
+    <div class="box">Okul</div>
+    <div class="box">Kafe</div>
+    <div class="box">İşyeri</div>
+    <div class="box">Düğün Salonu</div>
+  </div>
+</section>
+
+<section class="container">
+  <h2>Kısa Galeri</h2>
+  <div class="areas">
+    <div class="box"><strong>Kurulum</strong><span>Cami / okul / işyeri seslendirme</span></div>
+    <div class="box"><strong>Etkinlik</strong><span>Düğün salonu / organizasyon</span></div>
+    <div class="box"><strong>Teknik Servis</strong><span>Bakım, arıza tespiti, onarım</span></div>
+  </div>
+  <div class="divider"></div>
+</section>
+
+<section class="container contact">
+  <h2>İletişim</h2>
+  <a href="tel:05321736053">📞 0532 173 60 53</a>
+  <a href="mailto:hikmetdniz@gmail.com">✉️ hikmetdniz@gmail.com</a>
+</section>
+
+<footer>
+  © 2026 HD Ses & Işık Sistemleri · Tüm hakları saklıdır<br />
+  Alan adı önerileri: <strong>hdsesisik.com</strong> · <strong>hdsesisik.net</strong> · <strong>hdsesisik.com</strong>
+</footer>
+
+<a href="https://wa.me/905321736053" style="position:fixed;right:20px;bottom:20px;background:#25D366;color:#fff;padding:14px 18px;border-radius:50px;font-weight:bold;z-index:999">WhatsApp</a>
+<a class="wa-fab" href="https://wa.me/905321736053?text=Merhaba%20HD%20Ses%20%26%20I%C5%9F%C4%B1k%20Sistemleri%20i%C3%A7in%20bilgi%20almak%20istiyorum." target="_blank" rel="noopener" aria-label="WhatsApp">
+  <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M16 3C9.383 3 4 8.15 4 14.5c0 2.361.74 4.556 2.01 6.39L5 29l8.38-2.74c1.72.83 3.65 1.29 5.62 1.29 6.617 0 12-5.15 12-11.5S22.617 3 16 3Z" fill="#0b0b0b" opacity="0.16"/>
+    <path d="M16 4.5c-5.79 0-10.5 4.473-10.5 10 0 2.15.69 4.18 1.99 5.89l-1.18 6.07 6.27-2.02c1.62.87 3.44 1.33 5.42 1.33 5.79 0 10.5-4.473 10.5-10S21.79 4.5 16 4.5Zm6.06 14.01c-.26.73-1.52 1.4-2.11 1.47-.56.07-1.26.1-2.04-.12-.47-.13-1.07-.34-1.84-.66-3.24-1.34-5.36-4.5-5.52-4.72-.15-.22-1.32-1.72-1.32-3.28 0-1.56.85-2.33 1.15-2.65.3-.32.66-.4.88-.4h.64c.2 0 .47-.07.73.55.26.62.89 2.14.97 2.3.08.16.13.35.02.57-.11.22-.17.35-.34.55-.17.2-.36.44-.51.59-.17.16-.35.33-.15.64.2.31.88 1.43 1.89 2.32 1.3 1.13 2.39 1.48 2.7 1.64.31.16.5.13.69-.08.2-.2.8-.9 1.01-1.21.21-.31.43-.26.73-.16.3.1 1.9.88 2.23 1.04.33.16.55.24.63.37.08.13.08.76-.18 1.49Z" fill="white"/>
+  </svg>
+</a>
+
+</body>
+</html>
