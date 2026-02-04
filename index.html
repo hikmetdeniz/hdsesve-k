@@ -67,23 +67,25 @@
 
     /* HERO */
     .hero{
-      position:relative;
       max-width:1100px;
       margin:40px auto 10px;
-      padding:40px 18px;
+      padding:60px 18px;
+      position:relative;
+      background-image:url('A_digital_photograph_features_a_close-up_of_a_prof.png');
+      background-size:cover;
+      background-position:center;
+      border-radius:18px;
       overflow:hidden;
     }
-    .hero::after{
+    .hero::before{
       content:"";
       position:absolute;
-      right:-40px;
-      top:10px;
-      width:420px;
-      height:420px;
-      opacity:.06;
-      background-repeat:no-repeat;
-      background-size:contain;
-      background-image:url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400"><g fill="none" stroke="%230f172a" stroke-width="6"><rect x="40" y="80" width="120" height="220" rx="16"/><circle cx="100" cy="140" r="28"/><circle cx="100" cy="220" r="40"/><path d="M260 80v140c0 40-60 40-60 0V80"/><rect x="200" y="40" width="120" height="200" rx="60"/><line x1="200" y1="240" x2="320" y2="240"/></g></svg>');
+      inset:0;
+      background:rgba(245,246,247,0.85);
+    }
+    .hero > *{
+      position:relative;
+      z-index:1;
     }
     .hero h1{
       font-size:36px;
