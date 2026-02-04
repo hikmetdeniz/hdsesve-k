@@ -3,9 +3,10 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>HD Ses & Işık Sistemleri | Kurulum · Kiralama · Sahne</title>
-  <meta name="description" content="HD Ses & Işık Sistemleri: club, canlı müzik, cami, okul ve işyerleri için ses–ışık sistemleri. Kurulum, kiralama, sahne çözümleri." />  <style>
+  <meta name="description" content="HD Ses & Işık Sistemleri: club, canlı müzik, cami, okul, kafe, işyeri ve düğün salonları için ses–ışık sistemleri. Kurulum, kiralama ve teknik servis." />  <style>
     :root{
       --bg:#f5f6f7;
+      --panel:#ffffff;
       --text:#111827;
       --muted:#6b7280;
       --accent:#0f172a;
@@ -14,6 +15,7 @@
     }
 
     *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
     body{
       margin:0;
       font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial;
@@ -38,189 +40,228 @@
       display:flex;
       justify-content:space-between;
       align-items:center;
+      gap:12px;
+      flex-wrap:wrap;
+    }
+    .brand{font-weight:900; letter-spacing:.2px}
+    .brand span{font-weight:500;color:var(--muted);font-size:13px;margin-left:6px}
+
+    .nav{
+      display:flex;
       gap:10px;
-    }
-    .brand{
-      font-weight:800;
-      letter-spacing:.2px;
-    }
-    .brand span{
-      font-weight:500;
-      color:var(--muted);
-      font-size:13px;
-      margin-left:6px;
+      align-items:center;
+      flex-wrap:wrap;
+      justify-content:flex-end;
     }
 
     .btn{
       padding:10px 14px;
       border-radius:10px;
-      font-weight:700;
+      font-weight:800;
       font-size:14px;
       border:1px solid var(--line);
-      background:white;
+      background:var(--panel);
+      line-height:1;
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      gap:8px;
     }
-    .btn.dark{
-      background:var(--accent);
-      color:white;
-      border:none;
-    }
+    .btn.dark{background:var(--accent);color:white;border:none}
 
     /* HERO */
     .hero{
       max-width:1100px;
-      margin:40px auto 10px;
-      padding:60px 18px;
-      position:relative;
-      background-image:url('A_digital_photograph_features_a_close-up_of_a_prof.png');
-      background-size:cover;
-      background-position:center;
+      margin:18px auto 10px;
+      padding:34px 18px;
       border-radius:18px;
-      overflow:hidden;
+      background:var(--panel);
+      border:1px solid var(--line);
     }
-    .hero::before{
-      content:"";
-      position:absolute;
-      inset:0;
-      background:rgba(245,246,247,0.85);
-    }
-    .hero > *{
-      position:relative;
-      z-index:1;
-    }
-    .hero h1{
-      font-size:36px;
-      margin:0 0 8px;
-    }
-    .hero p{
-      color:var(--muted);
-      max-width:520px;
-      margin:0 0 20px;
-      font-size:15px;
-    }
-    .hero-actions{
-      display:flex;
-      gap:10px;
-      flex-wrap:wrap;
-    }
+    .hero h1{font-size:36px;margin:0 0 8px; letter-spacing:-.3px}
+    .hero p{color:var(--muted);max-width:720px;margin:0 0 18px;font-size:15px; line-height:1.55}
+    .hero-actions{display:flex;gap:10px;flex-wrap:wrap}
 
     /* SECTIONS */
-    section{
-      max-width:1100px;
-      margin:40px auto;
-      padding:0 18px;
-    }
-    section h2{
-      font-size:22px;
-      margin-bottom:14px;
-    }
+    section{max-width:1100px;margin:34px auto;padding:0 18px}
+    section h2{font-size:22px;margin:0 0 12px}
+    .sub{color:var(--muted); font-size:14px; margin:-4px 0 14px}
 
-    .list{
-      display:grid;
-      grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-      gap:14px;
+    /* ACCORDION */
+    .accordion{border-top:1px solid var(--line)}
+    .acc-item{border-bottom:1px solid var(--line)}
+    .acc-head{
+      cursor:pointer;
+      padding:14px 6px;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      gap:12px;
+      font-weight:900;
+      user-select:none;
     }
-    .item{
-      padding:14px 2px;
-    }
-    .item strong{
-      display:block;
-      margin-bottom:4px;
-    }
-    .item span{
-      color:var(--muted);
-      font-size:14px;
-      line-height:1.4;
-    }
+    .acc-meta{display:flex; align-items:center; gap:10px; color:var(--muted); font-weight:700; font-size:13px}
+    .chev{width:16px; height:16px; transition:transform .2s ease; display:inline-block}
 
-    /* DARK STRIP (CLUB FEEL) */
-    .dark-strip{
-      background:var(--accent);
-      color:white;
-      margin:50px 0;
-      padding:40px 18px;
-    }
-    .dark-inner{
-      max-width:1100px;
-      margin:auto;
-    }
-    .dark-inner p{
-      color:rgba(255,255,255,.8);
-      max-width:520px;
-    }
+    .acc-body{display:none;padding:0 6px 14px;color:var(--muted);font-size:14px;line-height:1.65}
+    .acc-item.active .acc-body{display:block}
+    .acc-item.active .chev{transform:rotate(180deg)}
 
     /* CONTACT */
-    .contact{
-      display:flex;
-      gap:12px;
-      flex-wrap:wrap;
+    .contact{display:flex;gap:12px;flex-wrap:wrap}
+
+    /* FOOTER */
+    footer{
+      max-width:1100px;
+      margin:30px auto 60px;
+      padding:0 18px;
+      color:var(--muted);
+      font-size:12px;
     }
 
-    /* MOBILE */
     @media(max-width:600px){
       .hero h1{font-size:28px}
-      .hero::after{
-        width:260px;
-        height:260px;
-        right:-80px;
-        top:40px;
-        opacity:.04;
-      }
-    }
+      .btn{padding:10px 12px}
+      .nav{width:100%; justify-content:space-between}
     }
   </style></head>
 <body>  <div class="top">
     <div class="top-inner">
-      <div class="brand">HD Ses & Işık<span>Kurulum · Kiralama · Sahne</span></div>
-      <a class="btn dark" href="tel:05321736053">Ara</a>
-    </div>
+      <div class="brand">HD Ses & Işık<span>Kurulum · Kiralama · Sahne</span></div><div class="nav">
+    <a class="btn" href="#hizmetler">Hizmetler</a>
+    <a class="btn" href="#alanlar">Alanlar</a>
+    <a class="btn" href="#iletisim">İletişim</a>
+    <a class="btn dark" href="tel:05321736053">Ara</a>
+  </div>
+</div>
+
   </div>  <div class="hero">
     <h1>Ses & Işık Sistemleri</h1>
-    <p>Club, canlı müzik, cami, okul ve işyerleri için net ses, doğru ışık ve sorunsuz kurulum.</p>
+    <p>Club, canlı müzik, cami, okul, kafe, işyeri ve düğün salonları için net ses, doğru ışık ve sorunsuz kurulum. Kiralama, kurulum ve teknik servis tek elden.</p>
     <div class="hero-actions">
       <a class="btn dark" href="#iletisim">Teklif Al</a>
       <a class="btn" href="https://wa.me/905321736053">WhatsApp</a>
     </div>
-  </div>  <section>
-    <h2>Ne Yapıyoruz?</h2>
-    <div class="list">
-      <div class="item"><strong>Ses Sistemleri</strong><span>Mekâna uygun, dengeli ve net ses kurulumu.</span></div>
-      <div class="item"><strong>Işık Sistemleri</strong><span>Sahne, club ve etkinlikler için ışık çözümleri.</span></div>
-      <div class="item"><strong>Kiralama</strong><span>Etkinlik ve organizasyonlar için hızlı kurulum.</span></div>
-      <div class="item"><strong>Teknik Servis</strong><span>Arıza, bakım ve sistem iyileştirme.</span></div>
+  </div>  <section id="hizmetler">
+    <h2>Hizmetler</h2>
+    <div class="sub">Başlığa tıkla, açıklama açılır.</div><div class="accordion" data-accordion="one">
+  <div class="acc-item">
+    <div class="acc-head" role="button" tabindex="0">
+      <div>Ses Sistemi Kurulumu</div>
+      <div class="acc-meta"><span class="state">Aç</span><span class="chev">▾</span></div>
     </div>
-  </section>  <section>
+    <div class="acc-body">Mekâna uygun hoparlör yerleşimi, amfi ve mikser ayarları yapılır. Sesin her noktaya dengeli ve net ulaşması hedeflenir; yankı ve geri besleme riskleri kontrol edilir.</div>
+  </div>
+
+  <div class="acc-item">
+    <div class="acc-head" role="button" tabindex="0">
+      <div>Işık Sistemleri</div>
+      <div class="acc-meta"><span class="state">Aç</span><span class="chev">▾</span></div>
+    </div>
+    <div class="acc-body">Sahne, club ve etkinlik alanları için mekâna uygun ışık planlaması yapılır. Kurulum sonrası temel kullanım ayarları verilir; görüntü temiz, kullanım pratik tutulur.</div>
+  </div>
+
+  <div class="acc-item">
+    <div class="acc-head" role="button" tabindex="0">
+      <div>Ses & Işık Kiralama</div>
+      <div class="acc-meta"><span class="state">Aç</span><span class="chev">▾</span></div>
+    </div>
+    <div class="acc-body">Etkinlik süresi ve alan büyüklüğüne göre ekipman seçilir. Kurulum ve toplama dahil şekilde hizmet verilir; hızlı kurulum, düzenli kablolama ve net ayar hedeflenir.</div>
+  </div>
+
+  <div class="acc-item">
+    <div class="acc-head" role="button" tabindex="0">
+      <div>Teknik Servis & Bakım</div>
+      <div class="acc-meta"><span class="state">Aç</span><span class="chev">▾</span></div>
+    </div>
+    <div class="acc-body">Mevcut sistemlerde arıza tespiti, bakım, kablo düzeni ve performans iyileştirmeleri yapılır. Amaç geçici çözüm değil, stabil ve uzun ömürlü kullanım sağlamaktır.</div>
+  </div>
+</div>
+
+  </section>  <section id="alanlar">
     <h2>Hizmet Verilen Alanlar</h2>
-    <div class="list">
-      <div class="item">
-        <strong>Cami</strong>
-        <span>Vaaz ve ezan için netlik ön plandadır. Yankıyı artırmayan, anlaşılabilirliği yükselten sistemler tercih edilir. Hoparlör yerleşimi ve ayarlar mimariye göre yapılır.</span>
-      </div>
-      <div class="item">
-        <strong>Okul & Kurum</strong>
-        <span>Anons ve törenlerde sesin her noktaya eşit dağılması sağlanır. Mikrofon geri beslemesi önlenir, kullanım pratik tutulur.</span>
-      </div>
-      <div class="item">
-        <strong>Kafe & Restoran</strong>
-        <span>Müziğin ortamı doldurması ama sohbeti bastırmaması hedeflenir. Bölgelere ayrılmış, kontrollü ses çözümleri uygulanır.</span>
-      </div>
-      <div class="item">
-        <strong>İşyeri & Mağaza</strong>
-        <span>Anons ve arka plan müzik için sade, düzenli ve kablo karmaşası oluşturmayan sistemler kurulur.</span>
-      </div>
-      <div class="item">
-        <strong>Düğün Salonu</strong>
-        <span>Yüksek ses seviyelerinde bozulma yaşamadan güçlü ve dengeli sonuç alınır. Mikrofon ve müzik sistemleri birlikte uyumlu çalışır.</span>
-      </div>
-      <div class="item">
-        <strong>Club & Canlı Müzik Mekânları</strong>
-        <span>Bas kontrolü, sahne önü ve arka alan dengesi birlikte planlanır. Canlı performanslar için güçlü ana sistem ve temiz monitörleme sağlanır.</span>
-      </div>
+    <div class="sub">Cami–okul–club dahil; alanın ihtiyacına göre kurulum.</div><div class="accordion" data-accordion="one">
+  <div class="acc-item">
+    <div class="acc-head" role="button" tabindex="0">
+      <div>Cami</div>
+      <div class="acc-meta"><span class="state">Aç</span><span class="chev">▾</span></div>
     </div>
+    <div class="acc-body">Vaaz ve ezan için netlik ön plandadır. Yankıyı artırmayan, anlaşılabilirliği yükselten sistemler tercih edilir; yerleşim ve ayarlar mimariye göre yapılır.</div>
+  </div>
+
+  <div class="acc-item">
+    <div class="acc-head" role="button" tabindex="0">
+      <div>Okul & Kurum</div>
+      <div class="acc-meta"><span class="state">Aç</span><span class="chev">▾</span></div>
+    </div>
+    <div class="acc-body">Anons ve törenlerde sesin her noktaya eşit dağılması sağlanır. Mikrofon geri beslemesi önlenir; kullanım pratik ve anlaşılır tutulur.</div>
+  </div>
+
+  <div class="acc-item">
+    <div class="acc-head" role="button" tabindex="0">
+      <div>Kafe & Restoran</div>
+      <div class="acc-meta"><span class="state">Aç</span><span class="chev">▾</span></div>
+    </div>
+    <div class="acc-body">Müzik ortamı doldurur ama sohbeti bastırmaz. Bölgelere ayrılmış, seviyeleri kontrollü sistemler kurulur; homojen dağılım hedeflenir.</div>
+  </div>
+
+  <div class="acc-item">
+    <div class="acc-head" role="button" tabindex="0">
+      <div>Düğün Salonu</div>
+      <div class="acc-meta"><span class="state">Aç</span><span class="chev">▾</span></div>
+    </div>
+    <div class="acc-body">Yüksek ses seviyelerinde bozulma olmadan güçlü ve dengeli sonuç alınır. Mikrofon ve müzik dengesi birlikte ayarlanır; sahne ve salon uyumu korunur.</div>
+  </div>
+
+  <div class="acc-item">
+    <div class="acc-head" role="button" tabindex="0">
+      <div>Club & Canlı Müzik</div>
+      <div class="acc-meta"><span class="state">Aç</span><span class="chev">▾</span></div>
+    </div>
+    <div class="acc-body">Bas kontrolü, sahne önü ve arka alan dengesi birlikte planlanır. Canlı performanslara uygun sistem kurulur; güç ve netlik korunurken kontrol kaybedilmez.</div>
+  </div>
+</div>
+
   </section>  <section id="iletisim">
     <h2>İletişim</h2>
     <div class="contact">
       <a class="btn dark" href="tel:05321736053">0532 173 60 53</a>
-      <a class="btn" href="mailto:hikmetdniz@gmail.com">E‑posta</a>
+      <a class="btn" href="mailto:hikmetdniz@gmail.com">hikmetdniz@gmail.com</a>
     </div>
-  </section></body>
+  </section>  <footer>
+    © <span id="y"></span> HD Ses & Işık Sistemleri
+  </footer>  <script>
+    // Accordion: same section => only one open
+    function wireAccordions(){
+      document.querySelectorAll('.accordion[data-accordion="one"]').forEach(acc => {
+        const items = Array.from(acc.querySelectorAll('.acc-item'));
+
+        function setState(item, open){
+          item.classList.toggle('active', open);
+          const s = item.querySelector('.state');
+          if(s) s.textContent = open ? 'Kapat' : 'Aç';
+        }
+
+        items.forEach(item => {
+          const head = item.querySelector('.acc-head');
+          const toggle = () => {
+            const isOpen = item.classList.contains('active');
+            items.forEach(it => setState(it, false));
+            setState(item, !isOpen);
+          };
+
+          head.addEventListener('click', toggle);
+          head.addEventListener('keydown', (e)=>{
+            if(e.key === 'Enter' || e.key === ' ') { e.preventDefault(); toggle(); }
+          });
+
+          // init
+          setState(item, false);
+        });
+      });
+    }
+
+    wireAccordions();
+    document.getElementById('y').textContent = new Date().getFullYear();
+  </script></body>
 </html>
