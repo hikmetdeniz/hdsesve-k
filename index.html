@@ -1,250 +1,491 @@
-<!DOCTYPE html>
-<html lang="tr">
+<!DOCTYPE html><html lang="tr">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Hikmet Deniz | Ses & Işık Sistemleri</title>
-  <meta name="description" content="Profesyonel ses ve ışık sistemleri. Cami, okul, kafe, işyeri ve düğün salonları için kiralama, kurulum ve teknik servis." />
+  <title>HD Ses & Işık Sistemleri | Kurulum · Kiralama · Teknik Servis</title>
+  <meta name="description" content="HD Ses & Işık Sistemleri: Cami, okul, kafe, işyeri ve düğün salonları için profesyonel ses ve ışık çözümleri. Kurulum, kiralama ve teknik servis." />
+  <meta name="theme-color" content="#0b0b0b" />
+  <meta property="og:title" content="HD Ses & Işık Sistemleri" />
+  <meta property="og:description" content="Kurulum · Kiralama · Teknik Servis" />
+  <meta property="og:type" content="website" />
   <style>
-    body {
-      margin: 0;
-      font-family: Arial, Helvetica, sans-serif;
-      background: #0e0e0e;
-      color: #f2f2f2;
-    }
-    a { color: inherit; text-decoration: none; }
-    .container { max-width: 1100px; margin: auto; padding: 40px 20px; }
+    :root{
+      --bg:#0b0b0b;
+      --panel:#121212;
+      --panel2:#151515;
+      --text:#f3f3f3;
+      --muted:rgba(243,243,243,.72);
+      --line:rgba(243,243,243,.12);
+      --line2:rgba(243,243,243,.18);
+      --radius:18px;
+      --shadow: 0 16px 60px rgba(0,0,0,.45);
+    }*{ box-sizing:border-box; }
+html{ scroll-behavior:smooth; }
+body{
+  margin:0;
+  font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, "Noto Sans", "Helvetica Neue", sans-serif;
+  background: radial-gradient(1100px 480px at 50% -5%, rgba(255,255,255,.10), rgba(0,0,0,0) 60%),
+              radial-gradient(800px 360px at 20% 10%, rgba(255,255,255,.06), rgba(0,0,0,0) 60%),
+              var(--bg);
+  color:var(--text);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+a{ color:inherit; text-decoration:none; }
 
-    header {
-      text-align: center;
-      padding: 120px 20px 90px;
-      background:
-        radial-gradient(900px 300px at 50% 10%, rgba(255,255,255,0.10), rgba(0,0,0,0) 60%),
-        linear-gradient(180deg, #0e0e0e 0%, #141414 100%);
-      position: relative;
-      overflow: hidden;
-    }
-    header::after{
-      content:"";
-      position:absolute;
-      inset:-2px;
-      background:
-        repeating-linear-gradient(90deg, rgba(255,255,255,0.04) 0 1px, rgba(0,0,0,0) 1px 10px),
-        repeating-linear-gradient(0deg, rgba(255,255,255,0.03) 0 1px, rgba(0,0,0,0) 1px 12px);
-      opacity:0.18;
-      pointer-events:none;
-      mix-blend-mode: overlay;
-    }
-    header .hero-badge{
-      display:inline-flex;
-      gap:10px;
-      align-items:center;
-      justify-content:center;
-      padding:10px 16px;
-      border:1px solid rgba(255,255,255,0.18);
-      border-radius:999px;
-      background: rgba(0,0,0,0.25);
-      margin-bottom:18px;
-      position:relative;
-      z-index:1;
-      font-size: 13px;
-      letter-spacing: .5px;
-      text-transform: uppercase;
-      opacity:.95;
-    }
-    header h1 {
-      font-size: 42px;
-      letter-spacing: 1px;
-      margin-bottom: 10px;
-    }
-    header p {
-      font-size: 18px;
-      opacity: 0.85;
-      margin-bottom: 30px;
-    }
-    .cta {
-      display: inline-block;
-      padding: 14px 28px;
-      border: 1px solid rgba(255,255,255,0.7);
-      border-radius: 10px;
-      font-weight: 700;
-      background: rgba(0,0,0,0.25);
-      backdrop-filter: blur(6px);
-      transition: transform .15s ease, border-color .15s ease;
-      position: relative;
-      z-index: 1;
-    }
-    .cta:hover{ transform: translateY(-1px); border-color: #fff; }
+.container{ max-width: 1120px; margin: 0 auto; padding: 0 20px; }
 
-    .subcta{
-      display:inline-block;
-      margin-left:10px;
-      padding: 14px 18px;
-      border-radius: 10px;
-      border: 1px solid rgba(255,255,255,0.18);
-      opacity: .92;
-      position: relative;
-      z-index: 1;
-    }
+/* Top bar */
+.topbar{
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: rgba(11,11,11,.72);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--line);
+}
+.topbar-inner{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding: 14px 0;
+  gap: 14px;
+}
+.brand{
+  display:flex;
+  align-items:baseline;
+  gap:10px;
+  letter-spacing:.2px;
+  white-space:nowrap;
+}
+.brand strong{ font-size: 16px; }
+.brand span{ font-size: 12px; color: var(--muted); }
 
-    section h2 {
-      font-size: 28px;
-      margin-bottom: 20px;
-      border-left: 4px solid #f2f2f2;
-      padding-left: 12px;
-    }
+nav{
+  display:flex;
+  gap: 14px;
+  align-items:center;
+  flex-wrap:wrap;
+  justify-content:flex-end;
+}
+nav a{
+  font-size: 13px;
+  color: var(--muted);
+  padding: 8px 10px;
+  border-radius: 10px;
+  border: 1px solid transparent;
+}
+nav a:hover{ color: var(--text); border-color: var(--line); background: rgba(255,255,255,.03); }
 
-    .services, .areas, .why {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 20px;
-    }
+.actions{ display:flex; gap:10px; align-items:center; }
+.btn{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  gap:10px;
+  padding: 11px 14px;
+  border-radius: 12px;
+  border: 1px solid var(--line2);
+  background: rgba(255,255,255,.04);
+  color: var(--text);
+  font-weight: 700;
+  font-size: 13px;
+  transition: transform .14s ease, background .14s ease, border-color .14s ease;
+  white-space:nowrap;
+}
+.btn:hover{ transform: translateY(-1px); background: rgba(255,255,255,.06); border-color: rgba(255,255,255,.25); }
+.btn.primary{ border-color: rgba(255,255,255,.35); background: rgba(255,255,255,.06); }
 
-    .services, .areas {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 20px;
-    }
-    .box {
-      background: #151515;
-      padding: 20px;
-      border-radius: 14px;
-      border: 1px solid #222;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.25);
-    }
+/* Hero */
+header.hero{
+  padding: 54px 0 10px;
+}
+.hero-grid{
+  display:grid;
+  grid-template-columns: 1.1fr .9fr;
+  gap: 26px;
+  align-items:stretch;
+}
+.hero-card{
+  border: 1px solid var(--line);
+  background: linear-gradient(180deg, rgba(255,255,255,.05), rgba(255,255,255,.02));
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  overflow:hidden;
+  position:relative;
+  padding: 26px;
+}
+.badge{
+  display:inline-flex;
+  gap:10px;
+  align-items:center;
+  padding: 10px 14px;
+  border-radius: 999px;
+  border: 1px solid var(--line2);
+  color: rgba(255,255,255,.88);
+  background: rgba(0,0,0,.25);
+  font-size: 12px;
+  letter-spacing: .6px;
+  text-transform: uppercase;
+  margin-bottom: 14px;
+}
+.hero h1{
+  margin: 0 0 10px;
+  font-size: 44px;
+  line-height: 1.05;
+  letter-spacing: -0.6px;
+}
+.hero p{
+  margin: 0 0 18px;
+  color: var(--muted);
+  font-size: 16px;
+  line-height: 1.5;
+  max-width: 56ch;
+}
+.chips{ display:flex; flex-wrap:wrap; gap:10px; margin: 12px 0 18px; }
+.chip{
+  padding: 10px 12px;
+  border-radius: 999px;
+  border: 1px solid var(--line);
+  background: rgba(255,255,255,.03);
+  font-size: 13px;
+  color: rgba(255,255,255,.9);
+}
 
-    .box strong{ display:block; font-size: 15px; margin-bottom: 6px; }
-    .box span{ display:block; opacity:.82; font-size: 14px; line-height: 1.35; }
+.hero-cta{ display:flex; flex-wrap:wrap; gap:10px; margin-top: 10px; }
 
-    .divider{
-      height:1px;
-      background: linear-gradient(90deg, rgba(255,255,255,0), rgba(255,255,255,0.14), rgba(255,255,255,0));
-      margin: 34px 0;
-    }
+.mini{
+  display:grid;
+  grid-template-columns: 1fr;
+  gap: 12px;
+}
+.mini .stat{
+  border: 1px solid var(--line);
+  background: rgba(255,255,255,.03);
+  border-radius: var(--radius);
+  padding: 16px;
+}
+.stat strong{ display:block; font-size: 14px; margin-bottom: 6px; }
+.stat span{ display:block; color: var(--muted); font-size: 13px; line-height: 1.35; }
 
-    /* WhatsApp Floating Button */
-    .wa-fab{
-      position: fixed;
-      right: 18px;
-      bottom: 18px;
-      width: 54px;
-      height: 54px;
-      border-radius: 999px;
-      display: grid;
-      place-items: center;
-      background: #25D366;
-      color: #0b0b0b;
-      box-shadow: 0 18px 40px rgba(0,0,0,0.35);
-      z-index: 99;
-      border: 1px solid rgba(255,255,255,0.25);
-    }
-    .wa-fab svg{ width: 26px; height: 26px; }
+/* Sections */
+section{ padding: 28px 0; }
+.section-head{
+  display:flex;
+  align-items:flex-end;
+  justify-content:space-between;
+  gap: 16px;
+  margin-bottom: 14px;
+}
+h2{
+  margin:0;
+  font-size: 22px;
+  letter-spacing: -0.2px;
+}
+.hint{ color: var(--muted); font-size: 13px; line-height: 1.35; }
 
-    footer {
-      text-align: center;
-      padding: 40px 20px;
-      background: #0a0a0a;
-      font-size: 14px;
-      opacity: 0.8;
-    }
+.grid{
+  display:grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+}
+.card{
+  border: 1px solid var(--line);
+  background: linear-gradient(180deg, rgba(255,255,255,.03), rgba(255,255,255,.02));
+  border-radius: var(--radius);
+  padding: 16px;
+  box-shadow: 0 10px 30px rgba(0,0,0,.25);
+}
+.card .title{ display:flex; align-items:center; gap:10px; font-weight: 800; font-size: 14px; margin-bottom: 6px; }
+.card p{ margin:0; color: var(--muted); font-size: 13px; line-height: 1.4; }
 
-    .contact {
-      text-align: center;
-      margin-top: 40px;
-    }
-    .contact a {
-      display: block;
-      margin: 10px 0;
-      font-size: 18px;
-    }
+.icon{
+  width: 28px;
+  height: 28px;
+  border-radius: 10px;
+  border: 1px solid var(--line);
+  background: rgba(255,255,255,.03);
+  display:grid;
+  place-items:center;
+  flex: 0 0 auto;
+}
+.icon svg{ width:16px; height:16px; opacity:.92; }
 
-    @media (max-width: 600px) {
-      header h1 { font-size: 32px; }
-    }
+.cta-strip{
+  margin-top: 14px;
+  border: 1px solid var(--line);
+  background: radial-gradient(500px 260px at 20% 0%, rgba(255,255,255,.10), rgba(0,0,0,0) 60%),
+              rgba(255,255,255,.03);
+  border-radius: var(--radius);
+  padding: 16px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap: 12px;
+  flex-wrap:wrap;
+}
+
+/* Contact */
+.contact{
+  display:grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+}
+.contact a{
+  display:flex;
+  align-items:center;
+  gap: 10px;
+  padding: 14px 14px;
+  border-radius: var(--radius);
+  border: 1px solid var(--line);
+  background: rgba(255,255,255,.03);
+  font-weight: 800;
+}
+.contact small{ display:block; font-weight: 600; color: var(--muted); margin-left: 2px; }
+
+footer{
+  padding: 26px 0 90px;
+  border-top: 1px solid var(--line);
+  color: var(--muted);
+  font-size: 12px;
+}
+
+/* WhatsApp floating */
+.wa-fab{
+  position: fixed;
+  right: 18px;
+  bottom: 18px;
+  width: 54px;
+  height: 54px;
+  border-radius: 999px;
+  display: grid;
+  place-items: center;
+  background: #25D366;
+  color: #0b0b0b;
+  box-shadow: 0 18px 40px rgba(0,0,0,0.35);
+  z-index: 99;
+  border: 1px solid rgba(255,255,255,0.25);
+}
+.wa-fab svg{ width: 26px; height: 26px; }
+
+/* Responsive */
+@media (max-width: 980px){
+  .hero-grid{ grid-template-columns: 1fr; }
+  nav{ display:none; }
+}
+@media (max-width: 860px){
+  .grid{ grid-template-columns: 1fr; }
+  .contact{ grid-template-columns: 1fr; }
+  .hero h1{ font-size: 36px; }
+}
+
   </style>
 </head>
-<body>
+<body>  <div class="topbar">
+    <div class="container topbar-inner">
+      <div class="brand">
+        <strong>HD Ses & Işık</strong>
+        <span>Kurulum · Kiralama · Teknik Servis</span>
+      </div><nav aria-label="Sayfa menüsü">
+    <a href="#hizmetler">Hizmetler</a>
+    <a href="#alanlar">Alanlar</a>
+    <a href="#neden">Neden HD?</a>
+    <a href="#surec">Süreç</a>
+    <a href="#iletisim">İletişim</a>
+  </nav>
 
-<header>
-  <div class="hero-badge">Kurulum • Kiralama • Teknik Servis</div>
-  <h1>HD Ses & Işık Sistemleri</h1>
-  <p>Profesyonel ses ve ışık çözümleri · Kurulum · Kiralama · Teknik Servis</p>
-  <a class="cta" href="tel:05321736053">Hemen Ara</a>
-  <a class="subcta" href="https://wa.me/905321736053?text=Merhaba%20HD%20Ses%20%26%20I%C5%9F%C4%B1k%20Sistemleri%20i%C3%A7in%20bilgi%20almak%20istiyorum." target="_blank" rel="noopener">WhatsApp</a>
-</header>
+  <div class="actions">
+    <a class="btn" href="https://wa.me/905321736053?text=Merhaba%20HD%20Ses%20%26%20I%C5%9F%C4%B1k%20Sistemleri%20i%C3%A7in%20bilgi%20almak%20istiyorum." target="_blank" rel="noopener">WhatsApp</a>
+    <a class="btn primary" href="tel:05321736053">Hemen Ara</a>
+  </div>
+</div>
 
-<section class="container">
-  <h2>Neden HD?</h2>
-  <div class="services">
-    <div class="box">Net ve dengeli ses kurulumu</div>
-    <div class="box">Mekâna özel profesyonel çözümler</div>
-    <div class="box">Temiz işçilik ve düzenli kurulum</div>
-    <div class="box">Satış sonrası teknik destek</div>
+  </div>  <header class="hero">
+    <div class="container">
+      <div class="hero-grid">
+        <div class="hero-card">
+          <div class="badge">Profesyonel · Hızlı · Temiz Kurulum</div>
+          <h1>HD Ses & Işık Sistemleri</h1>
+          <p>Ses ve ışık sistemleri, doğru planlanmadığında hem kullanım konforunu hem de mekânın algısını olumsuz etkiler. Bu nedenle her alan için aynı ekipmanı kullanmak yerine, alanın yapısına ve kullanım amacına göre planlama yapılması gerekir. Cami, okul, kafe, işyeri ve düğün salonları için ses ve ışık sistemleri kurulumu, kiralama ve teknik servis hizmetleri sunuyoruz. Önceliğimiz yüksek ses değil; net, dengeli ve uzun süre rahatsız etmeyen bir dağılım sağlamaktır.</p><div class="chips" aria-label="Hizmet özetleri">
+        <div class="chip">Ses Sistemi Kiralama</div>
+        <div class="chip">Mekâna Özel Seslendirme</div>
+        <div class="chip">Anons & Mikrofon</div>
+        <div class="chip">Kurulum & Servis</div>
+      </div>
+
+      <div class="hero-cta">
+        <a class="btn primary" href="#iletisim">Teklif Al</a>
+        <a class="btn" href="#hizmetler">Hizmetleri Gör</a>
+      </div>
+    </div>
+
+    <div class="mini">
+      <div class="stat">
+        <strong>Hızlı geri dönüş</strong>
+        <span>WhatsApp’tan yaz, ihtiyacını netleştirelim ve yönlendirelim.</span>
+      </div>
+      <div class="stat">
+        <strong>Temiz işçilik</strong>
+        <span>Kablo düzeni, montaj ve görünüm: pratik ve profesyonel.</span>
+      </div>
+      <div class="stat">
+        <strong>Yerinde çözüm</strong>
+        <span>Mekâna göre plan: doğru yerleşim, net ses, dengeli dağılım.</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+  </header>  <main>
+    <section id="hizmetler">
+      <div class="container">
+        <div class="section-head">
+          <h2>Hizmetler</h2>
+          <div class="hint">Net başlıklar, hızlı karar. Detay için WhatsApp’tan yazabilirsin.</div>
+        </div><div class="grid">
+      <div class="card">
+        <div class="title"><span class="icon">{
+          <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M5 9v6" stroke="white" opacity=".9" stroke-width="2" stroke-linecap="round"/><path d="M9 7v10" stroke="white" opacity=".9" stroke-width="2" stroke-linecap="round"/><path d="M13 5v14" stroke="white" opacity=".9" stroke-width="2" stroke-linecap="round"/><path d="M17 7v10" stroke="white" opacity=".9" stroke-width="2" stroke-linecap="round"/><path d="M21 9v6" stroke="white" opacity=".9" stroke-width="2" stroke-linecap="round"/></svg>
+        }</span>Profesyonel Ses Sistemi Kiralama</div>
+        <p>Kısa süreli etkinlik ve organizasyonlar için ses sistemi kiralama hizmeti sunuyoruz. Alan büyüklüğü ve kullanım amacına göre uygun ekipman seçilir, kurulum ve ayarlar yapılarak sistem çalışır halde teslim edilir.</p>
+      </div>
+
+      <div class="card">
+        <div class="title"><span class="icon">{
+          <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 3v8" stroke="white" opacity=".9" stroke-width="2" stroke-linecap="round"/><path d="M8 11h8" stroke="white" opacity=".9" stroke-width="2" stroke-linecap="round"/><path d="M5 21l7-6 7 6" stroke="white" opacity=".9" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        }</span>Ses ve Işık Sistemleri</div>
+        <p>Ses ve ışık sistemleri birlikte planlandığında hem görsel hem işitsel olarak dengeli bir sonuç elde edilir. Mekânın mimarisi ve kullanım şekline göre uyumlu sistemler tercih edilir.</p>
+      </div>
+
+      <div class="card">
+        <div class="title"><span class="icon">{
+          <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M7 21V8a5 5 0 0 1 10 0v13" stroke="white" opacity=".9" stroke-width="2" stroke-linecap="round"/><path d="M5 21h14" stroke="white" opacity=".9" stroke-width="2" stroke-linecap="round"/></svg>
+        }</span>Cami ve Toplu Alan Seslendirme</div>
+        <p>Cami ve toplu alanlarda sesin anlaşılır olması esastır. Yankı kontrolü, doğru hoparlör yerleşimi ve dengeli ayarlar ile net bir anons sağlanır.</p>
+      </div>
+        <p>Net anons, doğru yankı kontrolü, dengeli dağılım.</p>
+      </div>
+
+      <div class="card">
+        <div class="title"><span class="icon">{
+          <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 14a3 3 0 0 0 3-3V7a3 3 0 1 0-6 0v4a3 3 0 0 0 3 3Z" stroke="white" opacity=".9" stroke-width="2"/><path d="M19 11a7 7 0 0 1-14 0" stroke="white" opacity=".9" stroke-width="2" stroke-linecap="round"/></svg>
+        }</span>Anons & Mikrofon Sistemleri</div>
+        <p>Podium/kürsü, el mikrofonu, kablosuz çözümler ve ayar.</p>
+      </div>
+
+      <div class="card">
+        <div class="title"><span class="icon">{
+          <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4 20h16" stroke="white" opacity=".9" stroke-width="2" stroke-linecap="round"/><path d="M6 16l4-6 4 3 4-7" stroke="white" opacity=".9" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        }</span>Mekâna Özel Seslendirme</div>
+        <p>Keşif mantığıyla: yerleşim, güç seçimi ve kablolama planı.</p>
+      </div>
+
+      <div class="card">
+        <div class="title"><span class="icon">{
+          <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M14 7l3 3-7 7H7v-3l7-7Z" stroke="white" opacity=".9" stroke-width="2" stroke-linejoin="round"/></svg>
+        }</span>Kurulum & Teknik Servis</div>
+        <p>Arıza, bakım, ayar ve sistem revizyonu. Ulaşılan, hızlı servis.</p>
+      </div>
+    </div>
+
+    <div class="cta-strip">
+      <div>
+        <strong>Hızlı teklif</strong><br />
+        <span class="hint">Mekân tipi + yaklaşık alan + isteklerini yaz, dönüş yapalım.</span>
+      </div>
+      <div class="actions">
+        <a class="btn" href="https://wa.me/905321736053?text=Merhaba%20HD%20Ses%20%26%20I%C5%9F%C4%B1k%20Sistemleri%20i%C3%A7in%20teklif%20almak%20istiyorum.%20Mek%C3%A2n:%20%20Alan:%20%20Tarih:%20" target="_blank" rel="noopener">WhatsApp’tan Teklif</a>
+        <a class="btn primary" href="tel:05321736053">Ara</a>
+      </div>
+    </div>
   </div>
 </section>
 
-<section class="container">
-  <h2>Hizmetler</h2>
-  <div class="services">
-    <div class="box">Profesyonel Ses Sistemi Kiralama</div>
-    <div class="box">Ses & Işık Sistemleri</div>
-    <div class="box">Cami ve Toplu Alan Seslendirme</div>
-    <div class="box">Anons & Mikrofon Sistemleri</div>
-    <div class="box">Mekâna Özel Seslendirme</div>
-    <div class="box">Kurulum & Teknik Servis</div>
+<section id="alanlar">
+  <div class="container">
+    <div class="section-head">
+      <h2>Hizmet Verilen Alanlar</h2>
+      <div class="hint">İhtiyaca göre paket değil, mekâna göre çözüm.</div>
+    </div>
+
+    <div class="grid">
+      <div class="card"><div class="title">Cami</div><p>Net anons, düzgün dağılım, minimum uğultu.</p></div>
+      <div class="card"><div class="title">Okul</div><p>Tören/anons sistemleri, salon ve koridor çözümleri.</p></div>
+      <div class="card"><div class="title">Kafe</div><p>Arka plan müzik + bölgeli ses, rahatsız etmeyen seviye.</p></div>
+      <div class="card"><div class="title">İşyeri</div><p>Ofis/depo/mağaza; pratik kurulum ve temiz kablolama.</p></div>
+      <div class="card"><div class="title">Düğün Salonu</div><p>Etkinlik ses + ışık planı, hızlı kurulum, sağlam sonuç.</p></div>
+      <div class="card"><div class="title">Toplu Alan</div><p>Dernek/kurum/halka açık alanlarda anons çözümleri.</p></div>
+    </div>
   </div>
 </section>
 
-<section class="container">
-  <h2>Neden HD?</h2>
-  <div class="why">
-    <div class="box"><strong>Net ve Dengeli Ses</strong><span>Mekâna göre doğru hoparlör yerleşimi ve temiz ayar.</span></div>
-    <div class="box"><strong>Şık ve Düzenli Kurulum</strong><span>Kablo, montaj, görünüm—temiz işçilik.</span></div>
-    <div class="box"><strong>Mekâna Özel Çözüm</strong><span>Keşif mantığıyla, ihtiyaca göre sistem.</span></div>
-    <div class="box"><strong>Satış Sonrası Destek</strong><span>Arıza, bakım, ayar—ulaşılabilir servis.</span></div>
-  </div>
-  <div class="divider"></div>
-</section>
+<section id="neden">
+  <div class="container">
+    <div class="section-head">
+      <h2>Neden HD?</h2>
+      <div class="hint">Gösteriş değil sonuç: net ses, düzenli kurulum.</div>
+    </div>
 
-<section class="container">
-  <h2>Hizmet Verilen Alanlar</h2>
-  <div class="areas">
-    <div class="box">Cami</div>
-    <div class="box">Okul</div>
-    <div class="box">Kafe</div>
-    <div class="box">İşyeri</div>
-    <div class="box">Düğün Salonu</div>
+    <div class="grid">
+      <div class="card"><div class="title">Net ve Dengeli Ses</div><p>Yerleşim ve ayar doğru olunca ses “bağırmadan” duyulur.</p></div>
+      <div class="card"><div class="title">Temiz İşçilik</div><p>Kablo düzeni, montaj ve görünüm; iş bittikten sonra da düzgün kalır.</p></div>
+      <div class="card"><div class="title">Mekâna Özel Plan</div><p>Standart paket değil: alan, yükseklik ve kullanım senaryosuna göre.</p></div>
+    </div>
   </div>
 </section>
 
-<section class="container">
-  <h2>Kısa Galeri</h2>
-  <div class="areas">
-    <div class="box"><strong>Kurulum</strong><span>Cami / okul / işyeri seslendirme</span></div>
-    <div class="box"><strong>Etkinlik</strong><span>Düğün salonu / organizasyon</span></div>
-    <div class="box"><strong>Teknik Servis</strong><span>Bakım, arıza tespiti, onarım</span></div>
+<section id="surec">
+  <div class="container">
+    <div class="section-head">
+      <h2>Çalışma Süreci</h2>
+      <div class="hint">3 adımda hızlı ve net ilerleriz.</div>
+    </div>
+
+    <div class="grid">
+      <div class="card"><div class="title">1) İhtiyaç</div><p>Mekân tipi + kullanım + beklenti: kısa bilgi yeter.</p></div>
+      <div class="card"><div class="title">2) Plan</div><p>Yerleşim ve sistem seçimi: doğru ürün, doğru konum.</p></div>
+      <div class="card"><div class="title">3) Kurulum</div><p>Kurulum + test + ayar: teslim ederken net çalışır.</p></div>
+    </div>
   </div>
-  <div class="divider"></div>
 </section>
 
-<section class="container contact">
-  <h2>İletişim</h2>
-  <a href="tel:05321736053">📞 0532 173 60 53</a>
-  <a href="mailto:hikmetdniz@gmail.com">✉️ hikmetdniz@gmail.com</a>
+<section id="iletisim">
+  <div class="container">
+    <div class="section-head">
+      <h2>İletişim</h2>
+      <div class="hint">Hızlı dönüş için WhatsApp daha iyi.</div>
+    </div>
+
+    <div class="contact">
+      <a href="tel:05321736053">
+        <div>📞 0532 173 60 53<small>Tek tıkla ara</small></div>
+      </a>
+      <a href="mailto:hikmetdniz@gmail.com">
+        <div>✉️ hikmetdniz@gmail.com<small>E‑posta</small></div>
+      </a>
+    </div>
+
+    <div class="cta-strip" style="margin-top:14px;">
+      <div>
+        <strong>Hemen mesaj at</strong><br />
+        <span class="hint">"Mekân: … / Alan: … / Tarih: …" yazman yeter.</span>
+      </div>
+      <div class="actions">
+        <a class="btn" href="https://wa.me/905321736053?text=Merhaba%20HD%20Ses%20%26%20I%C5%9F%C4%B1k%20Sistemleri.%20Mek%C3%A2n:%20%20Alan:%20%20Tarih:%20%20%C4%B0stek:%20" target="_blank" rel="noopener">WhatsApp</a>
+        <a class="btn primary" href="tel:05321736053">Ara</a>
+      </div>
+    </div>
+  </div>
 </section>
 
-<footer>
-  © 2026 HD Ses & Işık Sistemleri · Tüm hakları saklıdır<br />
-  Alan adı önerileri: <strong>hdsesisik.com</strong> · <strong>hdsesisik.net</strong> · <strong>hdsesisik.com</strong>
-</footer>
-
-<a href="https://wa.me/905321736053" style="position:fixed;right:20px;bottom:20px;background:#25D366;color:#fff;padding:14px 18px;border-radius:50px;font-weight:bold;z-index:999">WhatsApp</a>
-<a class="wa-fab" href="https://wa.me/905321736053?text=Merhaba%20HD%20Ses%20%26%20I%C5%9F%C4%B1k%20Sistemleri%20i%C3%A7in%20bilgi%20almak%20istiyorum." target="_blank" rel="noopener" aria-label="WhatsApp">
-  <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <path d="M16 3C9.383 3 4 8.15 4 14.5c0 2.361.74 4.556 2.01 6.39L5 29l8.38-2.74c1.72.83 3.65 1.29 5.62 1.29 6.617 0 12-5.15 12-11.5S22.617 3 16 3Z" fill="#0b0b0b" opacity="0.16"/>
-    <path d="M16 4.5c-5.79 0-10.5 4.473-10.5 10 0 2.15.69 4.18 1.99 5.89l-1.18 6.07 6.27-2.02c1.62.87 3.44 1.33 5.42 1.33 5.79 0 10.5-4.473 10.5-10S21.79 4.5 16 4.5Zm6.06 14.01c-.26.73-1.52 1.4-2.11 1.47-.56.07-1.26.1-2.04-.12-.47-.13-1.07-.34-1.84-.66-3.24-1.34-5.36-4.5-5.52-4.72-.15-.22-1.32-1.72-1.32-3.28 0-1.56.85-2.33 1.15-2.65.3-.32.66-.4.88-.4h.64c.2 0 .47-.07.73.55.26.62.89 2.14.97 2.3.08.16.13.35.02.57-.11.22-.17.35-.34.55-.17.2-.36.44-.51.59-.17.16-.35.33-.15.64.2.31.88 1.43 1.89 2.32 1.3 1.13 2.39 1.48 2.7 1.64.31.16.5.13.69-.08.2-.2.8-.9 1.01-1.21.21-.31.43-.26.73-.16.3.1 1.9.88 2.23 1.04.33.16.55.24.63.37.08.13.08.76-.18 1.49Z" fill="white"/>
-  </svg>
-</a>
-
-</body>
+  </main>  <footer>
+    <div class="container">
+      © 2026 HD Ses & Işık Sistemleri · Tüm hakları saklıdır
+    </div>
+  </footer>  <a class="wa-fab" href="https://wa.me/905321736053?text=Merhaba%20HD%20Ses%20%26%20I%C5%9F%C4%B1k%20Sistemleri%20i%C3%A7in%20bilgi%20almak%20istiyorum." target="_blank" rel="noopener" aria-label="WhatsApp">
+    <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M16 3C9.383 3 4 8.15 4 14.5c0 2.361.74 4.556 2.01 6.39L5 29l8.38-2.74c1.72.83 3.65 1.29 5.62 1.29 6.617 0 12-5.15 12-11.5S22.617 3 16 3Z" fill="#0b0b0b" opacity="0.16"/>
+      <path d="M16 4.5c-5.79 0-10.5 4.473-10.5 10 0 2.15.69 4.18 1.99 5.89l-1.18 6.07 6.27-2.02c1.62.87 3.44 1.33 5.42 1.33 5.79 0 10.5-4.473 10.5-10S21.79 4.5 16 4.5Zm6.06 14.01c-.26.73-1.52 1.4-2.11 1.47-.56.07-1.26.1-2.04-.12-.47-.13-1.07-.34-1.84-.66-3.24-1.34-5.36-4.5-5.52-4.72-.15-.22-1.32-1.72-1.32-3.28 0-1.56.85-2.33 1.15-2.65.3-.32.66-.4.88-.4h.64c.2 0 .47-.07.73.55.26.62.89 2.14.97 2.3.08.16.13.35.02.57-.11.22-.17.35-.34.55-.17.2-.36.44-.51.59-.17.16-.35.33-.15.64.2.31.88 1.43 1.89 2.32 1.3 1.13 2.39 1.48 2.7 1.64.31.16.5.13.69-.08.2-.2.8-.9 1.01-1.21.21-.31.43-.26.73-.16.3.1 1.9.88 2.23 1.04.33.16.55.24.63.37.08.13.08.76-.18 1.49Z" fill="white"/>
+    </svg>
+  </a></body>
 </html>
