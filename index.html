@@ -2,428 +2,186 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>HD Ses & Işık Sistemleri | Kurulum · Kiralama · Teknik Servis</title>
-  <meta name="description" content="HD Ses & Işık Sistemleri: Cami, okul, kafe, işyeri ve düğün salonları için profesyonel ses ve ışık çözümleri. Kurulum, kiralama ve teknik servis." />
-  <meta name="theme-color" content="#0b0b0b" />
-  <meta property="og:title" content="HD Ses & Işık Sistemleri" />
-  <meta property="og:description" content="Kurulum · Kiralama · Teknik Servis" />
-  <meta property="og:type" content="website" />
-  <style>
+  <title>HD Ses & Işık Sistemleri | Kurulum · Kiralama · Sahne</title>
+  <meta name="description" content="HD Ses & Işık Sistemleri: club, canlı müzik, cami, okul ve işyerleri için ses–ışık sistemleri. Kurulum, kiralama, sahne çözümleri." />  <style>
     :root{
-      --bg:#f6f7f8;
-      --panel:#ffffff;
-      --panel2:#ffffff;
-      --text:#0f172a;
-      --muted:rgba(15,23,42,.65);
-      --line:rgba(15,23,42,.08);
-      --line2:rgba(15,23,42,.12);
+      --bg:#f5f6f7;
+      --text:#111827;
+      --muted:#6b7280;
+      --accent:#0f172a;
+      --line:#e5e7eb;
       --radius:14px;
-      --shadow: 0 10px 30px rgba(15,23,42,.08);
-    }*{ box-sizing:border-box; }
-html{ scroll-behavior:smooth; }
-body{
-  margin:0;
-  font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, "Noto Sans", "Helvetica Neue", sans-serif;
-  background: linear-gradient(180deg, #f8fafc, #f1f5f9);
-  color:var(--text);
-  -webkit-font-smoothing: antialiased;
-  text-rendering: optimizeLegibility;
-}
-a{ color:inherit; text-decoration:none; }
+    }
 
-.container{ max-width: 1120px; margin: 0 auto; padding: 0 20px; }
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial;
+      background:var(--bg);
+      color:var(--text);
+    }
+    a{text-decoration:none;color:inherit}
 
-/* Top bar */
-.topbar{
-  position: sticky;
-  top: 0;
-  z-index: 50;
-  background: rgba(11,11,11,.72);
-  backdrop-filter: blur(10px);
-  border-bottom: 1px solid var(--line);
-}
-.topbar-inner{
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  padding: 14px 0;
-  gap: 14px;
-}
-.brand{
-  display:flex;
-  align-items:baseline;
-  gap:10px;
-  letter-spacing:.2px;
-  white-space:nowrap;
-}
-.brand strong{ font-size: 16px; }
-.brand span{ font-size: 12px; color: var(--muted); }
+    /* HEADER */
+    .top{
+      position:sticky;
+      top:0;
+      z-index:10;
+      background:rgba(245,246,247,.92);
+      backdrop-filter:blur(8px);
+      border-bottom:1px solid var(--line);
+    }
+    .top-inner{
+      max-width:1100px;
+      margin:auto;
+      padding:14px 18px;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      gap:10px;
+    }
+    .brand{
+      font-weight:800;
+      letter-spacing:.2px;
+    }
+    .brand span{
+      font-weight:500;
+      color:var(--muted);
+      font-size:13px;
+      margin-left:6px;
+    }
 
-nav{
-  display:flex;
-  gap: 14px;
-  align-items:center;
-  flex-wrap:wrap;
-  justify-content:flex-end;
-}
-nav a{
-  font-size: 13px;
-  color: var(--muted);
-  padding: 8px 10px;
-  border-radius: 10px;
-  border: 1px solid transparent;
-}
-nav a:hover{ color: var(--text); border-color: var(--line); background: rgba(255,255,255,.03); }
+    .btn{
+      padding:10px 14px;
+      border-radius:10px;
+      font-weight:700;
+      font-size:14px;
+      border:1px solid var(--line);
+      background:white;
+    }
+    .btn.dark{
+      background:var(--accent);
+      color:white;
+      border:none;
+    }
 
-.actions{ display:flex; gap:10px; align-items:center; }
-.btn{
-  display:inline-flex;
-  align-items:center;
-  justify-content:center;
-  gap:10px;
-  padding: 11px 14px;
-  border-radius: 12px;
-  border: 1px solid var(--line2);
-  background: rgba(255,255,255,.04);
-  color: var(--text);
-  font-weight: 700;
-  font-size: 13px;
-  transition: transform .14s ease, background .14s ease, border-color .14s ease;
-  white-space:nowrap;
-}
-.btn:hover{ transform: translateY(-1px); background: rgba(255,255,255,.06); border-color: rgba(255,255,255,.25); }
-.btn.primary{ border-color: rgba(255,255,255,.35); background: rgba(255,255,255,.06); }
+    /* HERO */
+    .hero{
+      max-width:1100px;
+      margin:40px auto 10px;
+      padding:0 18px;
+    }
+    .hero h1{
+      font-size:36px;
+      margin:0 0 8px;
+    }
+    .hero p{
+      color:var(--muted);
+      max-width:520px;
+      margin:0 0 20px;
+      font-size:15px;
+    }
+    .hero-actions{
+      display:flex;
+      gap:10px;
+      flex-wrap:wrap;
+    }
 
-/* Hero */
-header.hero{
-  padding: 54px 0 10px;
-}
-.hero-grid{
-  display:grid;
-  grid-template-columns: 1.1fr .9fr;
-  gap: 26px;
-  align-items:stretch;
-}
-.hero-card{
-  border: none;
-  background: transparent;
-  border-radius: 0;
-  box-shadow: none;
-  padding: 20px 0;
-}
-.badge{
-  display:inline-flex;
-  gap:10px;
-  align-items:center;
-  padding: 10px 14px;
-  border-radius: 999px;
-  border: 1px solid var(--line2);
-  color: rgba(255,255,255,.88);
-  background: rgba(0,0,0,.25);
-  font-size: 12px;
-  letter-spacing: .6px;
-  text-transform: uppercase;
-  margin-bottom: 14px;
-}
-.hero h1{
-  margin: 0 0 10px;
-  font-size: 44px;
-  line-height: 1.05;
-  letter-spacing: -0.6px;
-}
-.hero p{
-  margin: 0 0 18px;
-  color: var(--muted);
-  font-size: 16px;
-  line-height: 1.5;
-  max-width: 56ch;
-}
-.chips{ display:flex; flex-wrap:wrap; gap:10px; margin: 12px 0 18px; }
-.chip{
-  padding: 10px 12px;
-  border-radius: 999px;
-  border: 1px solid var(--line);
-  background: rgba(255,255,255,.03);
-  font-size: 13px;
-  color: rgba(255,255,255,.9);
-}
+    /* SECTIONS */
+    section{
+      max-width:1100px;
+      margin:40px auto;
+      padding:0 18px;
+    }
+    section h2{
+      font-size:22px;
+      margin-bottom:14px;
+    }
 
-.hero-cta{ display:flex; flex-wrap:wrap; gap:10px; margin-top: 10px; }
+    .list{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+      gap:14px;
+    }
+    .item{
+      padding:14px 2px;
+    }
+    .item strong{
+      display:block;
+      margin-bottom:4px;
+    }
+    .item span{
+      color:var(--muted);
+      font-size:14px;
+      line-height:1.4;
+    }
 
-.mini{
-  display:grid;
-  grid-template-columns: 1fr;
-  gap: 12px;
-}
-.mini .stat{
-  border: 1px solid var(--line);
-  background: rgba(255,255,255,.03);
-  border-radius: var(--radius);
-  padding: 16px;
-}
-.stat strong{ display:block; font-size: 14px; margin-bottom: 6px; }
-.stat span{ display:block; color: var(--muted); font-size: 13px; line-height: 1.35; }
+    /* DARK STRIP (CLUB FEEL) */
+    .dark-strip{
+      background:var(--accent);
+      color:white;
+      margin:50px 0;
+      padding:40px 18px;
+    }
+    .dark-inner{
+      max-width:1100px;
+      margin:auto;
+    }
+    .dark-inner p{
+      color:rgba(255,255,255,.8);
+      max-width:520px;
+    }
 
-/* Sections */
-section{ padding: 28px 0; }
-.section-head{
-  display:flex;
-  align-items:flex-end;
-  justify-content:space-between;
-  gap: 16px;
-  margin-bottom: 14px;
-}
-h2{
-  margin:0;
-  font-size: 22px;
-  letter-spacing: -0.2px;
-}
-.hint{ color: var(--muted); font-size: 13px; line-height: 1.35; }
+    /* CONTACT */
+    .contact{
+      display:flex;
+      gap:12px;
+      flex-wrap:wrap;
+    }
 
-.grid{
-  display:grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 14px;
-}
-.card{
-  border: none;
-  background: transparent;
-  border-radius: 0;
-  padding: 12px 0;
-  box-shadow: none;
-}
-.card .title{ display:flex; align-items:center; gap:10px; font-weight: 800; font-size: 14px; margin-bottom: 6px; }
-.card p{ margin:0; color: var(--muted); font-size: 13px; line-height: 1.4; }
-
-.icon{
-  width: 28px;
-  height: 28px;
-  border-radius: 10px;
-  border: 1px solid var(--line);
-  background: rgba(255,255,255,.03);
-  display:grid;
-  place-items:center;
-  flex: 0 0 auto;
-}
-.icon svg{ width:16px; height:16px; opacity:.92; }
-
-.cta-strip{
-  margin-top: 18px;
-  border: none;
-  background: transparent;
-  border-radius: 0;
-  padding: 0;
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  gap: 12px;
-  flex-wrap:wrap;
-}
-
-/* Contact */
-.contact{
-  display:grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 14px;
-}
-.contact a{
-  display:flex;
-  align-items:center;
-  gap: 10px;
-  padding: 14px 14px;
-  border-radius: var(--radius);
-  border: 1px solid var(--line);
-  background: rgba(255,255,255,.03);
-  font-weight: 800;
-}
-.contact small{ display:block; font-weight: 600; color: var(--muted); margin-left: 2px; }
-
-footer{
-  padding: 26px 0 90px;
-  border-top: 1px solid var(--line);
-  color: var(--muted);
-  font-size: 12px;
-  background: transparent;
-}
-
-/* WhatsApp floating */
-.wa-fab{
-  position: fixed;
-  right: 18px;
-  bottom: 18px;
-  width: 54px;
-  height: 54px;
-  border-radius: 999px;
-  display: grid;
-  place-items: center;
-  background: #25D366;
-  color: #0b0b0b;
-  box-shadow: 0 18px 40px rgba(0,0,0,0.35);
-  z-index: 99;
-  border: 1px solid rgba(255,255,255,0.25);
-}
-.wa-fab svg{ width: 26px; height: 26px; }
-
-/* Responsive */
-@media (max-width: 980px){
-  .hero-grid{ grid-template-columns: 1fr; }
-  nav{ display:none; }
-}
-@media (max-width: 860px){
-  .grid{ grid-template-columns: 1fr; }
-  .contact{ grid-template-columns: 1fr; }
-  .hero h1{ font-size: 32px; line-height: 1.15; }
-  .hero p{ font-size: 15px; }
-  .topbar-inner{ flex-wrap: wrap; }
-  .brand strong{ font-size: 15px; }
-  .brand span{ font-size: 11px; }
-  .btn{ width: 100%; justify-content: center; }
-  .hero-cta{ flex-direction: column; }
-  .cta-strip{ flex-direction: column; align-items: flex-start; }
-  .chips{ gap:8px; }
-  .chip{ font-size:12px; padding:8px 10px; }
-}
-  .contact{ grid-template-columns: 1fr; }
-  .hero h1{ font-size: 36px; }
-}
-
-  </style>
-</head>
-<body>  <div class="topbar">
-    <div class="container topbar-inner">
-      <div class="brand">
-        <strong>HD Ses & Işık</strong>
-        <span>Kurulum · Kiralama · Teknik Servis</span>
-      </div><nav aria-label="Sayfa menüsü">
-    <a href="#hizmetler">Hizmetler</a>
-    <a href="#alanlar">Alanlar</a>
-    <a href="#neden">Neden HD?</a>
-    <a href="#surec">Süreç</a>
-    <a href="#iletisim">İletişim</a>
-  </nav>
-
-  <div class="actions">
-    <a class="btn" href="https://wa.me/905321736053?text=Merhaba%20HD%20Ses%20%26%20I%C5%9F%C4%B1k%20Sistemleri%20i%C3%A7in%20bilgi%20almak%20istiyorum." target="_blank" rel="noopener">WhatsApp</a>
-    <a class="btn primary" href="tel:05321736053">Hemen Ara</a>
-  </div>
-</div>
-
-  </div>  <header class="hero">
-    <div class="container">
-      <div class="hero-grid">
-        <div class="hero-card">
-          <h1>Ses & Işık Sistemleri</h1>
-          <p>Kurulum, kiralama ve teknik servis. Net ses, sade kurulum, sorunsuz kullanım.</p>
-          <div class="hero-cta">
-            <a class="btn primary" href="#iletisim">Teklif Al</a>
-            <a class="btn" href="tel:05321736053">Ara</a>
-          </div>
-        </div>
-        <div class="mini">
-          <div class="stat"><strong>Sade Çözüm</strong><span>Gereksiz detay yok, ihtiyaca uygun sistem.</span></div>
-          <div class="stat"><strong>Net Sonuç</strong><span>Anlaşılır ses, dengeli dağılım.</span></div>
-        </div>
-      </div>
+    /* MOBILE */
+    @media(max-width:600px){
+      .hero h1{font-size:28px}
+    }
+  </style></head>
+<body>  <div class="top">
+    <div class="top-inner">
+      <div class="brand">HD Ses & Işık<span>Kurulum · Kiralama · Sahne</span></div>
+      <a class="btn dark" href="tel:05321736053">Ara</a>
     </div>
-  </header>  <main>
-    <section id="hizmetler">
-      <div class="container">
-        <div class="section-head">
-          <h2>Ne Yapıyoruz?</h2>
-        </div>
-        <div class="grid">
-          <div class="card"><div class="title">Ses Sistemi</div><p>Cami, okul, kafe ve işyerleri için ses sistemleri.</p></div>
-          <div class="card"><div class="title">Işık Sistemi</div><p>Salon ve etkinlik alanları için ışık çözümleri.</p></div>
-          <div class="card"><div class="title">Kiralama</div><p>Organizasyon ve özel günler için ekipman kiralama.</p></div>
-          <div class="card"><div class="title">Kurulum</div><p>Temiz işçilik, düzenli kablolama.</p></div>
-          <div class="card"><div class="title">Teknik Servis</div><p>Bakım, ayar ve arıza giderme.</p></div>
-        </div>
-      </div>
-    </section><section id="alanlar">
-  <div class="container">
-    <div class="section-head">
-      <h2>Hizmet Verilen Alanlar</h2>
-      <div class="hint">İhtiyaca göre paket değil, mekâna göre çözüm.</div>
+  </div>  <div class="hero">
+    <h1>Ses & Işık Sistemleri</h1>
+    <p>Club, canlı müzik, cami, okul ve işyerleri için net ses, doğru ışık ve sorunsuz kurulum.</p>
+    <div class="hero-actions">
+      <a class="btn dark" href="#iletisim">Teklif Al</a>
+      <a class="btn" href="https://wa.me/905321736053">WhatsApp</a>
     </div>
-
-    <div class="grid">
-      <div class="card"><div class="title">Cami</div><p>Net anons, düzgün dağılım, minimum uğultu.</p></div>
-      <div class="card"><div class="title">Okul</div><p>Tören/anons sistemleri, salon ve koridor çözümleri.</p></div>
-      <div class="card"><div class="title">Kafe</div><p>Arka plan müzik + bölgeli ses, rahatsız etmeyen seviye.</p></div>
-      <div class="card"><div class="title">İşyeri</div><p>Ofis/depo/mağaza; pratik kurulum ve temiz kablolama.</p></div>
-      <div class="card"><div class="title">Düğün Salonu</div><p>Etkinlik ses + ışık planı, hızlı kurulum, sağlam sonuç.</p></div>
-      <div class="card"><div class="title">Toplu Alan</div><p>Dernek/kurum/halka açık alanlarda anons çözümleri.</p></div>
+  </div>  <section>
+    <h2>Ne Yapıyoruz?</h2>
+    <div class="list">
+      <div class="item"><strong>Ses Sistemleri</strong><span>Mekâna uygun, dengeli ve net ses kurulumu.</span></div>
+      <div class="item"><strong>Işık Sistemleri</strong><span>Sahne, club ve etkinlikler için ışık çözümleri.</span></div>
+      <div class="item"><strong>Kiralama</strong><span>Etkinlik ve organizasyonlar için hızlı kurulum.</span></div>
+      <div class="item"><strong>Teknik Servis</strong><span>Arıza, bakım ve sistem iyileştirme.</span></div>
     </div>
-  </div>
-</section>
-
-<section id="neden">
-  <div class="container">
-    <div class="section-head">
-      <h2>Neden HD?</h2>
-      <div class="hint">Gösteriş değil sonuç: net ses, düzenli kurulum.</div>
+  </section>  <div class="dark-strip">
+    <div class="dark-inner">
+      <h2>Club & Canlı Müzik</h2>
+      <p>Sahne önü, DJ kabini ve canlı performanslar için güçlü ses, kontrollü bas ve doğru ışık atmosferi.</p>
     </div>
-
-    <div class="grid">
-      <div class="card"><div class="title">Net ve Dengeli Ses</div><p>Yerleşim ve ayar doğru olunca ses “bağırmadan” duyulur.</p></div>
-      <div class="card"><div class="title">Temiz İşçilik</div><p>Kablo düzeni, montaj ve görünüm; iş bittikten sonra da düzgün kalır.</p></div>
-      <div class="card"><div class="title">Mekâna Özel Plan</div><p>Standart paket değil: alan, yükseklik ve kullanım senaryosuna göre.</p></div>
+  </div>  <section>
+    <h2>Hizmet Verilen Alanlar</h2>
+    <div class="list">
+      <div class="item"><strong>Club & Bar</strong><span>Gece kullanımına uygun sistemler.</span></div>
+      <div class="item"><strong>Canlı Müzik</strong><span>Sahne ve performans sesleri.</span></div>
+      <div class="item"><strong>Cami</strong><span>Anlaşılır anons ve dengeli dağılım.</span></div>
+      <div class="item"><strong>Okul & Kurum</strong><span>Tören ve anons sistemleri.</span></div>
     </div>
-  </div>
-</section>
-
-<section id="surec">
-  <div class="container">
-    <div class="section-head">
-      <h2>Çalışma Süreci</h2>
-      <div class="hint">3 adımda hızlı ve net ilerleriz.</div>
-    </div>
-
-    <div class="grid">
-      <div class="card"><div class="title">1) İhtiyaç</div><p>Mekân tipi + kullanım + beklenti: kısa bilgi yeter.</p></div>
-      <div class="card"><div class="title">2) Plan</div><p>Yerleşim ve sistem seçimi: doğru ürün, doğru konum.</p></div>
-      <div class="card"><div class="title">3) Kurulum</div><p>Kurulum + test + ayar: teslim ederken net çalışır.</p></div>
-    </div>
-  </div>
-</section>
-
-<section id="iletisim">
-  <div class="container">
-    <div class="section-head">
-      <h2>İletişim</h2>
-      <div class="hint">Hızlı dönüş için WhatsApp daha iyi.</div>
-    </div>
-
+  </section>  <section id="iletisim">
+    <h2>İletişim</h2>
     <div class="contact">
-      <a href="tel:05321736053">
-        <div>📞 0532 173 60 53<small>Tek tıkla ara</small></div>
-      </a>
-      <a href="mailto:hikmetdniz@gmail.com">
-        <div>✉️ hikmetdniz@gmail.com<small>E‑posta</small></div>
-      </a>
+      <a class="btn dark" href="tel:05321736053">0532 173 60 53</a>
+      <a class="btn" href="mailto:hikmetdniz@gmail.com">E‑posta</a>
     </div>
-
-    <div class="cta-strip" style="margin-top:14px;">
-      <div>
-        <strong>Hemen mesaj at</strong><br />
-        <span class="hint">"Mekân: … / Alan: … / Tarih: …" yazman yeter.</span>
-      </div>
-      <div class="actions">
-        <a class="btn" href="https://wa.me/905321736053?text=Merhaba%20HD%20Ses%20%26%20I%C5%9F%C4%B1k%20Sistemleri.%20Mek%C3%A2n:%20%20Alan:%20%20Tarih:%20%20%C4%B0stek:%20" target="_blank" rel="noopener">WhatsApp</a>
-        <a class="btn primary" href="tel:05321736053">Ara</a>
-      </div>
-    </div>
-  </div>
-</section>
-
-  </main>  <footer>
-    <div class="container">
-      © 2026 HD Ses & Işık Sistemleri · Tüm hakları saklıdır
-    </div>
-  </footer>  <a class="wa-fab" href="https://wa.me/905321736053?text=Merhaba%20HD%20Ses%20%26%20I%C5%9F%C4%B1k%20Sistemleri%20i%C3%A7in%20bilgi%20almak%20istiyorum." target="_blank" rel="noopener" aria-label="WhatsApp">
-    <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <path d="M16 3C9.383 3 4 8.15 4 14.5c0 2.361.74 4.556 2.01 6.39L5 29l8.38-2.74c1.72.83 3.65 1.29 5.62 1.29 6.617 0 12-5.15 12-11.5S22.617 3 16 3Z" fill="#0b0b0b" opacity="0.16"/>
-      <path d="M16 4.5c-5.79 0-10.5 4.473-10.5 10 0 2.15.69 4.18 1.99 5.89l-1.18 6.07 6.27-2.02c1.62.87 3.44 1.33 5.42 1.33 5.79 0 10.5-4.473 10.5-10S21.79 4.5 16 4.5Zm6.06 14.01c-.26.73-1.52 1.4-2.11 1.47-.56.07-1.26.1-2.04-.12-.47-.13-1.07-.34-1.84-.66-3.24-1.34-5.36-4.5-5.52-4.72-.15-.22-1.32-1.72-1.32-3.28 0-1.56.85-2.33 1.15-2.65.3-.32.66-.4.88-.4h.64c.2 0 .47-.07.73.55.26.62.89 2.14.97 2.3.08.16.13.35.02.57-.11.22-.17.35-.34.55-.17.2-.36.44-.51.59-.17.16-.35.33-.15.64.2.31.88 1.43 1.89 2.32 1.3 1.13 2.39 1.48 2.7 1.64.31.16.5.13.69-.08.2-.2.8-.9 1.01-1.21.21-.31.43-.26.73-.16.3.1 1.9.88 2.23 1.04.33.16.55.24.63.37.08.13.08.76-.18 1.49Z" fill="white"/>
-    </svg>
-  </a></body>
+  </section></body>
 </html>
